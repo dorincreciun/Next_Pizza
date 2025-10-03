@@ -2,7 +2,6 @@ import {ButtonHTMLAttributes, RefObject} from "react";
 
 export type CategoryType = {
     id: string;
-    slug: string;
     name: string;
 }
 
