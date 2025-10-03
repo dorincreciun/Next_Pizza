@@ -1,0 +1,1 @@
+export const encodeList = (arr: string[]) => arr.filter(Boolean).join(",");

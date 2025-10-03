@@ -1,9 +1,38 @@
+"use client"
 import {Categories} from "@/features/categories";
 import {Container} from "@/shared/components/Container";
 import {Title} from "@/shared/components/Title";
-import {Filter} from "@/features/filter";
+import {Filter, useFilter} from "@/features/filter";
+
+const filters = {
+    flags: [
+        { id: "84566", name: "Можно собирать" },
+        { id: "84567", name: "Новинки", },
+    ],
+
+    ingredients: [
+        { id: "90001", name: "Сырный соус" },
+        { id: "90002", name: "Моцарелла" },
+        { id: "90003", name: "Чеснок" },
+        { id: "90004", name: "Солённые огурчики" },
+        { id: "90005", name: "Красный лук" },
+        { id: "90006", name: "Томаты" },
+    ],
+
+    dough: [
+        { id: "91001", name: "Традициональный" },
+        { id: "91002", name: "Тонкий" },
+    ],
+};
+
 
 export default function CatalogPage() {
+    const fnSetFilters = useFilter((state) => state.setFilters);
+
+    if (fnSetFilters) {
+        fnSetFilters(filters);
+    }
+
     return (
         <main>
             <section className={"mt-10"}>

@@ -1,0 +1,1 @@
+export const decodeList = (v: string | null) => (v ?? "").split(",").map((s) => s.trim()).filter(Boolean);
