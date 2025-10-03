@@ -1,19 +1,22 @@
 "use client"
+import {FC, useEffect, useMemo} from "react";
 import {Title} from "@/shared/components/Title";
 import {Checkbox} from "@/shared/components/Checkbox";
 import {Button} from "@/shared/components/Button";
 import {Radio} from "@/shared/components/Radio";
-import {FC} from "react";
 import {useFilter} from "@/features/filter";
-import {useRouter, useSearchParams} from "next/navigation";
+import {type ReadonlyURLSearchParams, useRouter, useSearchParams} from "next/navigation";
 import {encodeList} from "@/features/filter/lib/encodeList";
+import {decodeList} from "@/features/filter/lib/decodeList";
 
 export const Filter: FC = () => {
     const router = useRouter()
     const searchParams = useSearchParams()
+
     /* store -> state */
     const {flags, ingredients, dough} = useFilter((state) => state.filters)
     const {flagIds, ingredientsIds, doughId} = useFilter((state) => state.selected)
+
     /* store -> actions */
     const toggleFlag = useFilter((state) => state.toggleFlag)
     const toggleDough = useFilter((state) => state.toggleDough)
