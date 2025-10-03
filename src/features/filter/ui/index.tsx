@@ -1,13 +1,12 @@
 "use client"
-import {FC, useEffect, useMemo} from "react";
+import {FC} from "react";
 import {Title} from "@/shared/components/Title";
 import {Checkbox} from "@/shared/components/Checkbox";
 import {Button} from "@/shared/components/Button";
 import {Radio} from "@/shared/components/Radio";
 import {useFilter} from "@/features/filter";
-import {type ReadonlyURLSearchParams, useRouter, useSearchParams} from "next/navigation";
+import {useRouter, useSearchParams} from "next/navigation";
 import {encodeList} from "@/features/filter/lib/encodeList";
-import {decodeList} from "@/features/filter/lib/decodeList";
 
 export const Filter: FC = () => {
     const router = useRouter()
