@@ -1,6 +1,7 @@
 import {Categories} from "@/features/categories";
 import {Container} from "@/shared/components/Container";
 import {Title} from "@/shared/components/Title";
+import {Filter} from "@/features/filter";
 
 export default function CatalogPage() {
     return (
@@ -19,8 +20,11 @@ export default function CatalogPage() {
 
             <div>
                 <Container className={"flex gap-10"}>
-                    <aside>filter</aside>
+                    <aside className={"w-[224px] shrink-0"}>
+                        <Filter />
+                    </aside>
                     <div>products</div>
+
                 </Container>
             </div>
         </main>
